@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC WIN CLUB - Premium Gaming Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #09090e;
+            --purple-neon: #9d4edd;
+            --blue-neon: #00f5d4;
+            --card-bg: rgba(30, 20, 50, 0.6);
+            --text-main: #ffffff;
+            --text-muted: #a3a3b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at top right, #2a0a4a, transparent 40%),
+                              radial-gradient(circle at bottom left, #0a1930, transparent 40%);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            margin-bottom: 30px;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, var(--purple-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-btn {
+            background: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--purple-neon);
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover {
+            background: var(--purple-neon);
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.8);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+
+        .hero-banner {
+           width: 100%;
+    max-width: 1500px;
+    height: 550px;
+    margin: 0 auto 40px;
+    background: url('banner.png') center/cover no-repeat; 
+    background-color: #1a0b2e; 
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, #00b4d8, #0077b6);
+            padding: 15px 40px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(0, 180, 216, 0.5);
+            transition: transform 0.2s;
+            animation: pulse 2s infinite;
+            text-align: center;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 180, 216, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
+        }
+
+        /* Games Grid */
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-main);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--blue-neon);
+            box-shadow: 0 10px 30px rgba(0, 245, 212, 0.3);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: auto;
+            max-height: 280px; 
+            object-fit: contain; 
+            border-radius: 15px;
+            margin-bottom: 15px;
+            background-color: rgba(0,0,0,0.2); 
+        }
+
+        .game-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .play-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--purple-neon), #7b2cbf);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            width: 100%;
+            margin-top: auto; 
+        }
+
+        /* Promotions Banner */
+        .promo-banner {
+            background: linear-gradient(45deg, #3c096c, #5a189a);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 30px rgba(90, 24, 154, 0.5);
+            gap: 20px;
+        }
+
+        .promo-text h2 {
+            font-size: 2rem;
+            color: #ff9e00;
+        }
+
+        .promo-text p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        /* Live Winners Marquee */
+        .winners-section {
+            margin-bottom: 50px;
+            background: rgba(0,0,0,0.4);
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .winners-track {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        .winner-tag {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin-right: 20px;
+            font-size: 0.9rem;
+        }
+
+        .winner-tag span {
+            color: #00f5d4;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Payment Partners & Footer */
+        .payments {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .payments h4 {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .payment-icons img {
+            height: 30px;
+            opacity: 0.7;
+            filter: grayscale(100%);
+            transition: 0.3s;
+        }
+
+        .payment-icons img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #555;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* RESPONSIVE MEDIA QUERIES */
+
+        @media (max-width: 992px) {
+            .hero-banner { height: 400px; }
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .hero { padding: 20px 0; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            
+            .hero-banner { 
+                height: 350px; 
+                padding-bottom: 30px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .cta-primary {
+                padding: 12px 20px;
+                font-size: 0.95rem;
+                width: 95%;
+                max-width: 320px;
+                white-space: normal;
+                line-height: 1.4;
+            }
+
+            .section-title { font-size: 1.5rem; }
+            
+            /* FORCE 2 COLUMNS ON TABLET/MOBILE */
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .promo-banner { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 20px;
+            }
+            .promo-text h2 { font-size: 1.5rem; }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            .logo { font-size: 20px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero-banner { height: 280px; }
+            
+            /* 2 COLUMNS WITH SMALLER SPACING FOR SMALL PHONES */
+            .games-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 10px;
+            }
+            .game-card {
+                padding: 10px;
+                border-radius: 12px;
+            }
+            .game-card img {
+                max-height: 150px; /* limits height so they don't look stretched vertically */
+                margin-bottom: 10px;
+            }
+            .play-btn {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+                border-radius: 20px;
+            }
+
+            .winner-tag {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+            .payment-icons img { height: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">BC WIN CLUB</div>
+            <a href="https://t.me/+PBk0SGAZCf01ZGU1" class="nav-btn">Join VIP Telegram</a>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>India's Premium Skill Gaming</h1>
+            <p>Join the elite community. Play smart, climb the leaderboard, and unlock daily rewards.</p>
+            
+            <div class="hero-banner">
+                <a href="https://t.me/+PBk0SGAZCf01ZGU1" class="cta-primary">Join Now & Get Welcome Bonus 🚀</a>
+            </div>
+        </div>
+
+        <!-- Popular Games Section -->
+        <h2 class="section-title">✨ Our Popular Games ✨</h2>
+        <div class="games-grid">
+
+            <!-- Game 1: Aviator/Crash -->
+            <div class="game-card">
+                <img src="Aviator.png" alt="Crash Game">
+                <a href="https://t.me/+PBk0SGAZCf01ZGU1" class="play-btn">Play Now</a>
+            </div>
+
+            <!-- Game 2: Color Prediction -->
+            <div class="game-card">
+                <img src="Color game.png" alt="Color Prediction">
+                <a href="https://t.me/+PBk0SGAZCf01ZGU1" class="play-btn">Predict & Win</a>
+            </div>
+
+            <!-- Game 3: Sports -->
+            <div class="game-card">
+                <img src="Slot.png" alt="Sports Skill">
+                <a href="https://t.me/+PBk0SGAZCf01ZGU1" class="play-btn">Spin Now</a>
+            </div>
+
+            <!-- Game 4: Slots/Spin -->
+            <div class="game-card">
+                <img src="Chicken.png" alt="Spin and Win">
+                <a href="https://t.me/+PBk0SGAZCf01ZGU1" class="play-btn">Play Now</a>
+            </div>
+        </div>
+
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            <div class="promo-text">
+                <h2>🎁 100% Welcome Offer</h2>
+                <p>Register for free today and claim your exclusive VIP bonus!</p>
+            </div>
+            <div>
+                <a href="https://t.me/+PBk0SGAZCf01ZGU1" class="cta-primary" style="background: #ff9e00; color: #000; box-shadow: 0 0 20px rgba(255, 158, 0, 0.4);">Claim Bonus Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Winners Marquee -->
+    <div class="winners-section">
+        <div class="winners-track" id="winners-track">
+            <!-- JavaScript will populate this -->
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Secure Payments -->
+        <div class="payments">
+            <h4>100% SECURE & VERIFIED PAYMENT PARTNERS</h4>
+            <div class="payment-icons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Disclaimer: All content shared by BCWIN is for analytical and entertainment purposes only. We provide statistical match analysis, probability models, and trend insights — not financial advice or guaranteed outcomes. Predictions reflect data modeling and may not match actual results.</p>
+            <p style="margin-top: 10px;">&copy; 2026 BC Win Digital | All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const names = ["Rahul D.", "Amit M.", "Neha K.", "Vikram S.", "Pooja R.", "Karan V.", "Suresh P.", "Anjali T."];
+        const amounts = ["₹10,500", "₹5,200", "₹22,000", "₹8,400", "₹15,000", "₹3,800"];
+        
+        const track = document.getElementById('winners-track');
+        let winnersHTML = '';
+
+        for(let i=0; i<15; i++) {
+            let rName = names[Math.floor(Math.random() * names.length)];
+            let rAmt = amounts[Math.floor(Math.random() * amounts.length)];
+            winnersHTML += `<div class="winner-tag">🏆 ${rName} just won <span>${rAmt}</span></div>`;
+        }
+        
+        track.innerHTML = winnersHTML + winnersHTML;
+    </script>
+</body>
+</html>
