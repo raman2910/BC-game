@@ -100,20 +100,22 @@
             padding: 0 15px;
         }
 
+        /* PERFECT RESPONSIVE BANNER */
         .hero-banner {
-           width: 100%;
-    max-width: 1500px;
-    height: 550px;
-    margin: 0 auto 40px;
-    background: url('Banner.png') center/cover no-repeat; 
-    background-color: #1a0b2e; 
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 40px;
+            width: 100%;
+            max-width: 1500px;
+            aspect-ratio: 1500 / 550; 
+            margin: 0 auto 40px;
+            /* CHANGES: cover ki jagah 100% 100% lagaya gaya hai */
+            background: url('Banner.png') center/100% 100% no-repeat; 
+            background-color: #1a0b2e; 
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 30px; 
         }
 
         .cta-primary {
@@ -303,10 +305,6 @@
 
         /* RESPONSIVE MEDIA QUERIES */
 
-        @media (max-width: 992px) {
-            .hero-banner { height: 400px; }
-        }
-
         /* Mobile Devices */
         @media (max-width: 768px) {
             header {
@@ -318,19 +316,17 @@
             .hero p { font-size: 1rem; }
             
             .hero-banner { 
-                height: 350px; 
-                padding-bottom: 30px;
-                padding-left: 15px;
-                padding-right: 15px;
+                padding-bottom: 15px; 
+                border-radius: 12px;
             }
 
             .cta-primary {
-                padding: 12px 20px;
-                font-size: 0.95rem;
-                width: 95%;
-                max-width: 320px;
+                padding: 8px 20px; 
+                font-size: 0.9rem;
+                width: 60%;
+                max-width: 280px;
                 white-space: normal;
-                line-height: 1.4;
+                line-height: 1.2;
             }
 
             .section-title { font-size: 1.5rem; }
@@ -353,8 +349,12 @@
         @media (max-width: 480px) {
             .logo { font-size: 20px; }
             .hero h1 { font-size: 1.8rem; }
-            .hero-banner { height: 280px; }
             
+            .cta-primary {
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+
             /* 2 COLUMNS WITH SMALLER SPACING FOR SMALL PHONES */
             .games-grid { 
                 grid-template-columns: repeat(2, 1fr); 
@@ -365,7 +365,7 @@
                 border-radius: 12px;
             }
             .game-card img {
-                max-height: 150px; /* limits height so they don't look stretched vertically */
+                max-height: 150px; 
                 margin-bottom: 10px;
             }
             .play-btn {
@@ -397,7 +397,7 @@
             <p>Join the elite community. Play smart, climb the leaderboard, and unlock daily rewards.</p>
             
             <div class="hero-banner">
-                <a href="https://t.me/+PBk0SGAZCf01ZGU1" class="cta-primary">Join Now & Get Welcome Bonus 🚀</a>
+                <a href="https://t.me/+PBk0SGAZCf01ZGU1" class="cta-primary">Get Welcome Bonus 🚀</a>
             </div>
         </div>
 
